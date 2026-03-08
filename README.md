@@ -38,7 +38,11 @@ IK分词器`github`仓库：[IK分词器](https://github.com/infinilabs/analysis
 
 #### 1.在[Docker @ Elastic](https://www.docker.elastic.co/)并在[IK分词器](https://github.com/infinilabs/analysis-ik?tab=readme-ov-file)寻找对应的版本
 
-此处选择应用elasticsearch:9.1.4-amd64。`elasticsearch`、`kibana`、`IK分词器`版本须保持一致![1](.image\1.png)![2](D:\Computer Science\blog\部署elasticsearch\image\2.png)
+此处选择应用elasticsearch:9.1.4-amd64。`elasticsearch`、`kibana`、`IK分词器`版本须保持一致
+
+![1](image/1.png)
+
+![2](image/2.png)
 
 #### 2.执行对应的命令
 
@@ -49,7 +53,7 @@ IK分词器`github`仓库：[IK分词器](https://github.com/infinilabs/analysis
 
 执行结果如下（我**手误执行了命令**`docker pull docker.elastic.co/kibana/kibana:9.1.4`，忽略该命令即可）
 
-![3](.\image\3.png)
+![3](image/3.png)
 
 #### 3.自定义镜像
 
@@ -73,7 +77,7 @@ IK分词器`github`仓库：[IK分词器](https://github.com/infinilabs/analysis
    docker build -t elasticsearch-ik:9.1.4 .
    ```
 
-   ![4](.\image\4.png)
+   ![4](image/4.png)
 
 完成上述操作，你将拥有两个镜像：
 
@@ -110,8 +114,13 @@ IK分词器`github`仓库：[IK分词器](https://github.com/infinilabs/analysis
 
 #### 5.访问路径验证成功
 
-1. 访问[localhost:9201](http://localhost:9201/)，若成功返回如下信息，则证明Elasticsearch容器启动成功![5](.\image\5.png)
-2. 访问localhost:5601，可以看到正常进入页面![6](.\image\6.png)
+1. 访问[localhost:9201](http://localhost:9201/)，若成功返回如下信息，则证明Elasticsearch容器启动成功
+
+   ![5](image/5.png)
+
+2. 访问localhost:5601，可以看到正常进入页面
+
+   ![6](image/6.png)
 
 #### 6.测试使用
 
@@ -120,7 +129,9 @@ IK分词器`github`仓库：[IK分词器](https://github.com/infinilabs/analysis
 - **存储时**：用 `ik_max_word`，保证尽可能多地被切分，提升召回率
 - **搜索时**：用 `ik_smart`，避免过多无意义的匹配，提升相关性
 
-1. 在`kibana`侧边栏找到**开发工具**![7](.\image\7.png)
+1. 在`kibana`侧边栏找到**开发工具**
+
+   ![7](image/7.png)
 
 2. 在控制台输入以下命令并执行。(analyzer与search_analyzer指定了选用的分词器，即IK分词器)
 
@@ -422,6 +433,8 @@ public class ArticleService {
 
 #### 发出请求，接收响应数据
 
-我使用了IDEA的Apifox插件发出请求，响应如下![8](.\image\8.png)
+我使用了IDEA的Apifox插件发出请求，响应如下
+
+![8](image/8.png)
 
 可以看到正确响应了数据。
