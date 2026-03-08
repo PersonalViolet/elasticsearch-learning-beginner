@@ -1,0 +1,8 @@
+spring:
+  elasticsearch:
+    uris: http://localhost:9201
+    # 若需认证（如 Elastic Cloud）
+    # username: elastic
+    # password: your-password
+    connection-timeout: 1s
+    socket-timeout: 30s
